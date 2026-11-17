@@ -3,10 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Game of Life</title>
+  <meta name="description" content="Histoire du jeu de la vie de Conway, d'après Wikipédia.">
+  <title>Histoire — The Game of Life</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>The Game of Life</h1>
-  <p>Site en construction : la maquette Figma est en cours.</p>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="index.html" aria-current="page">Histoire</a></li>
+      <li><a href="regles.html">Les règles</a></li>
+      <li><a href="jeu.html">Le jeu</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Histoire</h1>
+      <p class="soustitre">Le jeu de la vie de Conway — d'après Wikipédia</p>
+    </header>
+
+    <section>
+      <h2>C'est quoi ?</h2>
+      <p>Le <strong>jeu de la Vie</strong> est un automate cellulaire imaginé en 1970 par le mathématicien britannique <a href="https://fr.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a>, alors professeur à l'université de Cambridge. C'est un « jeu à zéro joueur » : une fois la configuration de départ choisie, le système évolue tout seul, sans intervention, à chaque génération. Il n'y a ni limite au nombre de générations ni condition de victoire.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></p>
+      <p>Malgré des règles très simples, le jeu est <strong>Turing-complet</strong> : avec une grille assez grande et les bonnes conditions initiales, il peut théoriquement calculer n'importe quel algorithme.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></p>
+    </section>
+
+    <section>
+      <h2>Un peu d'histoire</h2>
+      <p>Conway construit le jeu en s'inspirant des travaux de John von Neumann sur les machines auto-reproductrices, qu'il simplifie. Il y jouait au départ à la main, avec un plateau de go et des pierres pour représenter les cellules vivantes.<sup><a href="#src-1">[1]</a></sup></p>
+      <p>Le grand public le découvre en <strong>octobre 1970</strong> dans la revue <em>Scientific American</em>, dans la rubrique « Mathematical Games » de Martin Gardner. Conway avait offert 50 dollars à qui prouverait ou réfuterait sa conjecture selon laquelle aucune configuration finie ne peut croître indéfiniment : le prix est remporté la même année par Bill Gosper et son équipe du MIT, grâce au <strong>canon à planeurs</strong> qui émet un planeur toutes les 30 générations.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></p>
+    </section>
+
+    <section>
+      <h2>Simulation</h2>
+      <p>Les premiers programmes apparaissent dès 1970. Pour explorer des motifs immenses sur des millions de générations, Bill Gosper crée en 1980 l'algorithme <a href="https://fr.wikipedia.org/wiki/Hashlife">Hashlife</a>, qui mémorise l'évolution de portions isolées de la grille pour « sauter » des générations. Des outils comme <a href="https://fr.wikipedia.org/wiki/Golly_(program)">Golly</a> l'intègrent aujourd'hui dans une interface graphique.<sup><a href="#src-1">[1]</a></sup></p>
+      <p>Le jeu a même eu droit à un <em>easter egg</em> : depuis 2012, une recherche Google sur « Conway's game of life » affiche une simulation interactive en arrière-plan.<sup><a href="#src-1">[1]</a></sup></p>
+    </section>
+
+    <footer>
+      <h2>Sources</h2>
+      <ol>
+        <li id="src-1">« Jeu de la vie », <em>Wikipédia, l'encyclopédie libre</em> — <a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie">https://fr.wikipedia.org/wiki/Jeu_de_la_vie</a> (consulté le 17 novembre 2026).</li>
+        <li id="src-2">« Conway's Game of Life », <em>Wikipedia, The Free Encyclopedia</em> — <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a> (consulté le 17 novembre 2026).</li>
+      </ol>
+      <p>Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, d'après Wikipédia.</p>
+    </footer>
+  </main>
 </body>
 </html>

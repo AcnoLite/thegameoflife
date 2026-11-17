@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les règles du jeu de la vie de Conway et les principales familles de structures, d'après Wikipédia.">
+  <title>Les règles — The Game of Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="index.html">Histoire</a></li>
+      <li><a href="regles.html" aria-current="page">Les règles</a></li>
+      <li><a href="jeu.html">Le jeu</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Les règles</h1>
+      <p class="soustitre">Quatre règles simples, une infinité de comportements</p>
+    </header>
+
+    <section>
+      <h2>Le principe</h2>
+      <p>Le jeu se déroule sur une grille carrée théoriquement infinie. Chaque case — appelée <em>cellule</em> — est soit <strong>vivante</strong>, soit <strong>morte</strong>, et compte huit voisines (horizontales, verticales et diagonales). À chaque génération, toutes les cellules évoluent <strong>simultanément</strong> selon ces règles :<sup><a href="#src-1">[1]</a></sup></p>
+      <ul class="liste">
+        <li>une cellule morte avec <strong>exactement trois</strong> voisines vivantes devient vivante (naissance) ;</li>
+        <li>une cellule vivante avec <strong>deux ou trois</strong> voisines vivantes survit ;</li>
+        <li>dans tous les autres cas, la cellule est morte à la génération suivante (sous-peuplement ou surpeuplement).</li>
+      </ul>
+      <p>Cette règle se résume par la notation <code>B3/S23</code> : naissance (« birth ») avec 3 voisines, survie (« survival ») avec 2 ou 3.<sup><a href="#src-2">[2]</a></sup></p>
+      <p>La configuration initiale constitue la « graine » du système : chaque génération est fonction de la seule génération précédente. On appelle parfois « tick » l'instant discret où toutes les cellules changent d'état en même temps.<sup><a href="#src-2">[2]</a></sup></p>
+    </section>
+
+    <section>
+      <h2>Les structures</h2>
+      <p>De ces règles simples émergent des motifs aux comportements variés, classés en plusieurs familles :<sup><a href="#src-1">[1]</a></sup></p>
+      <ul class="liste">
+        <li><strong>structures stables</strong> : figées, comme le bloc de quatre cellules ;</li>
+        <li><strong>oscillateurs</strong> : ils reviennent à leur état initial après quelques générations, comme la grenouille (période 2) ou le pulsar (période 3) ;</li>
+        <li><strong>vaisseaux</strong> : ils se déplacent sur la grille, comme le planeur qui avance en diagonale toutes les quatre générations ;</li>
+        <li><strong>canons</strong> : des configurations immobiles qui émettent des vaisseaux à intervalles réguliers ;</li>
+        <li><strong>mathusalems</strong> : des structures très longues à se stabiliser, comme le R-pentomino (1 103 générations).</li>
+      </ul>
+    </section>
+
+    <footer>
+      <h2>Sources</h2>
+      <ol>
+        <li id="src-1">« Jeu de la vie », <em>Wikipédia, l'encyclopédie libre</em> — <a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie">https://fr.wikipedia.org/wiki/Jeu_de_la_vie</a> (consulté le 17 novembre 2026).</li>
+        <li id="src-2">« Conway's Game of Life », <em>Wikipedia, The Free Encyclopedia</em> — <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a> (consulté le 17 novembre 2026).</li>
+      </ol>
+      <p>Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, d'après Wikipédia.</p>
+    </footer>
+  </main>
+</body>
+</html>
