@@ -116,3 +116,13 @@ footer h2 { font-size: 1rem; color: var(--texte); }
 
 footer ol { margin: 0 0 1rem; padding-left: 1.3rem; }
 footer li { margin-bottom: .5rem; }
+
+.jeu-scroll { overflow-x: auto; }
+
+#life {
+  display: block;
+  border: 1px solid var(--bordure);
+  background: #fff;
+  cursor: crosshair;
+  max-width: 100%;
+}
