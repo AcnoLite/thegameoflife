@@ -1,0 +1,267 @@
+/* Shared styles for all four pages. */
+
+:root {
+  --text: #1b1b1b;
+  --muted: #666;
+  --accent: #2b5d8a;
+  --background: #fafafa;
+  --border: #ddd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* The skip link stays off-screen until it receives keyboard focus. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: .5rem;
+  z-index: 100;
+  padding: .5rem 1rem;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header { margin-bottom: 2rem; }
+
+h1 {
+  margin: 0 0 .25rem;
+  font-family: "Fraunces", serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Keep the navigation available while scrolling. */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a,
+nav button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .6rem 0;
+  color: var(--muted);
+  text-decoration: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav button:hover { color: var(--accent); }
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+
+section { margin-top: 2.5rem; }
+
+h2 {
+  margin: 0 0 .75rem;
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+p { margin: 0 0 1rem; }
+
+ul.list { margin: 0 0 1rem; padding-left: 1.3rem; }
+ul.list li { margin-bottom: .4rem; }
+
+a { color: var(--accent); }
+
+code {
+  background: #eee;
+  padding: .1em .35em;
+  border-radius: 3px;
+  font-size: .9em;
+}
+
+.callout {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  background: #f0f3f6;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+footer h2 { font-size: 1rem; color: var(--text); }
+
+footer ol { margin: 0 0 1rem; padding-left: 1.3rem; }
+footer li { margin-bottom: .5rem; }
+
+/* Game page. */
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.game-help { color: var(--muted); }
+
+.game-stats {
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.game-scroll { overflow-x: auto; }
+
+#game-canvas {
+  display: block;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: crosshair;
+  max-width: 100%;
+  height: auto;
+}
+
+#demo-video {
+  display: block;
+  width: 100%;
+  max-width: 46rem;
+  height: auto;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+#back-to-top {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: .9rem;
+}
+
+/* Form controls. */
+button,
+input,
+select,
+textarea { font: inherit; }
+
+button {
+  min-height: 44px;
+  padding: .5rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--accent); color: var(--accent); }
+
+fieldset {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+legend {
+  padding: 0 .4rem;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  max-width: 32rem;
+  padding: .55rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+}
+
+textarea { resize: vertical; }
+
+#form-status {
+  min-height: 1.5rem;
+  color: var(--accent);
+}
+
+/* Small screens. */
+@media (max-width: 640px) {
+  main { padding: 1.5rem 1rem 3rem; }
+  h1 { font-size: 1.75rem; }
+  nav ul { gap: .75rem 1rem; padding: 0 1rem; }
+  nav a,
+  nav button { font-size: .95rem; }
+  .game-controls { gap: .5rem; }
+}
+
+/* Tablets. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  main { max-width: 42rem; }
+}

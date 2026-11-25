@@ -8,27 +8,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link id="theme-stylesheet" rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/top.js" defer></script>
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
   <nav aria-label="Navigation principale">
     <ul>
       <li><a href="index.html">Histoire</a></li>
-      <li><a href="regles.html" aria-current="page">Les règles</a></li>
-      <li><a href="jeu.html">Le jeu</a></li>
+      <li><a href="rules.html" aria-current="page">Les règles</a></li>
+      <li><a href="game.html">Le jeu</a></li>
+      <li><a href="feedback.html">Avis</a></li>
+      <li><button id="theme-toggle" type="button" aria-pressed="false">Changer de style</button></li>
     </ul>
   </nav>
 
-  <main>
+  <main id="main">
     <header>
       <h1>Les règles</h1>
-      <p class="soustitre">Quatre règles simples, une infinité de comportements</p>
+      <p class="subtitle">Quatre règles simples, une infinité de comportements</p>
     </header>
 
     <section>
       <h2>Le principe</h2>
       <p>Le jeu se déroule sur une grille carrée théoriquement infinie. Chaque case — appelée <em>cellule</em> — est soit <strong>vivante</strong>, soit <strong>morte</strong>, et compte huit voisines (horizontales, verticales et diagonales). À chaque génération, toutes les cellules évoluent <strong>simultanément</strong> selon ces règles :<sup><a href="#src-1">[1]</a></sup></p>
-      <ul class="liste">
+      <ul class="list">
         <li>une cellule morte avec <strong>exactement trois</strong> voisines vivantes devient vivante (naissance) ;</li>
         <li>une cellule vivante avec <strong>deux ou trois</strong> voisines vivantes survit ;</li>
         <li>dans tous les autres cas, la cellule est morte à la génération suivante (sous-peuplement ou surpeuplement).</li>
@@ -40,7 +47,7 @@
     <section>
       <h2>Les structures</h2>
       <p>De ces règles simples émergent des motifs aux comportements variés, classés en plusieurs familles :<sup><a href="#src-1">[1]</a></sup></p>
-      <ul class="liste">
+      <ul class="list">
         <li><strong>structures stables</strong> : figées, comme le bloc de quatre cellules ;</li>
         <li><strong>oscillateurs</strong> : ils reviennent à leur état initial après quelques générations, comme la grenouille (période 2) ou le pulsar (période 3) ;</li>
         <li><strong>vaisseaux</strong> : ils se déplacent sur la grille, comme le planeur qui avance en diagonale toutes les quatre générations ;</li>
@@ -57,6 +64,8 @@
       </ol>
       <p>Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, d'après Wikipédia.</p>
     </footer>
+
+    <a id="back-to-top" href="#top">↑ Haut de page</a>
   </main>
 </body>
 </html>
