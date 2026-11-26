@@ -20,15 +20,15 @@
 
     const data = new FormData(form);
     const nom = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
     const note = String(data.get('rating') || '');
     const message = String(data.get('message') || '').trim();
 
     const sujet = encodeURIComponent('Avis The Game of Life — ' + nom + ' (' + note + '/5)');
-    const corps = encodeURIComponent(
-      'Nom : ' + nom + '\n' +
-      'Note : ' + note + '/5\n\n' +
-      message
-    );
+    let texte = 'Nom : ' + nom + '\n';
+    if (email) texte += 'E-mail : ' + email + '\n';
+    texte += 'Note : ' + note + '/5\n\n' + message;
+    const corps = encodeURIComponent(texte);
 
     const url = 'mailto:' + DESTINATAIRES
       + '?subject=' + sujet
