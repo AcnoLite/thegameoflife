@@ -235,6 +235,9 @@ input[type="text"],
 input[type="email"],
 select,
 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
   max-width: 32rem;
   padding: .55rem .7rem;
@@ -266,34 +269,3 @@ textarea { resize: vertical; }
   main { max-width: 42rem; }
 }
 
-/* Dark theme, toggled by js/theme.js via data-theme on <html>. */
-html[data-theme="dark"] {
-  --text: #e6e6e6;
-  --muted: #a3a3a3;
-  --accent: #8ab8e0;
-  --background: #161616;
-  --border: #3a3a3a;
-}
-
-html[data-theme="dark"] nav,
-html[data-theme="dark"] .skip-link:focus,
-html[data-theme="dark"] button,
-html[data-theme="dark"] input[type="text"],
-html[data-theme="dark"] input[type="email"],
-html[data-theme="dark"] select,
-html[data-theme="dark"] textarea {
-  background: #1f1f1f;
-  color: var(--text);
-}
-
-html[data-theme="dark"] #life {
-  background: #1f1f1f;
-  border-color: var(--border);
-}
-
-html[data-theme="dark"] code { background: #2c2c2c; }
-
-html[data-theme="dark"] .callout {
-  background: #1d2733;
-  border-color: var(--accent);
-}
