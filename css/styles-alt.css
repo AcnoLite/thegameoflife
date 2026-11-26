@@ -46,6 +46,28 @@ button {
   color: #111;
 }
 
+/* Keep form values, placeholders and code readable on the dark background. */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  background: #1b2129;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+option {
+  background: #1b2129;
+  color: var(--text);
+}
+
+::placeholder { color: #9aa3ad; }
+
+code {
+  background: #1b2129;
+  color: var(--text);
+}
+
 #game-canvas,
 #demo-video { border-color: var(--accent); }
 
