@@ -170,7 +170,7 @@ footer li { margin-bottom: .5rem; }
 
 .game-scroll { overflow-x: auto; }
 
-#life {
+#game-canvas {
   display: block;
   border: 1px solid var(--border);
   background: #fff;
