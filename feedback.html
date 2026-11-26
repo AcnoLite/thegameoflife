@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Donnez votre avis sur le site The Game of Life : votre message est envoyé par e-mail.">
+  <title>Avis — The Game of Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link id="theme-stylesheet" rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/top.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="index.html">Histoire</a></li>
+      <li><a href="rules.html">Les règles</a></li>
+      <li><a href="game.html">Le jeu</a></li>
+      <li><a href="feedback.html" aria-current="page">Avis</a></li>
+      <li><button id="theme-toggle" type="button" aria-pressed="false">Changer de style</button></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <header>
+      <h1>Avis</h1>
+      <p class="subtitle">Votre retour nous aide à améliorer le site</p>
+    </header>
+
+    <section>
+      <h2>Donner votre avis</h2>
+      <form id="feedback-form">
+        <fieldset>
+          <legend>Votre avis</legend>
+
+          <p>
+            <label for="feedback-name">Nom</label>
+            <input id="feedback-name" name="name" type="text" required minlength="2" maxlength="40" pattern="[A-Za-zÀ-ÿ'’-]{2,40}" title="2 à 40 lettres, espaces, tirets ou apostrophes" placeholder="Votre nom" autocomplete="name">
+          </p>
+
+          <p>
+            <label for="feedback-email">Adresse e-mail</label>
+            <input id="feedback-email" name="email" type="email" required placeholder="vous@exemple.fr" autocomplete="email">
+          </p>
+
+          <p>
+            <label for="feedback-rating">Note</label>
+            <select id="feedback-rating" name="rating" required>
+              <option value="">Choisissez une note</option>
+              <option value="1">1 — Perfectible</option>
+              <option value="2">2 — Insuffisant</option>
+              <option value="3">3 — Correct</option>
+              <option value="4">4 — Bon</option>
+              <option value="5">5 — Excellent</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="feedback-message">Message</label>
+            <textarea id="feedback-message" name="message" rows="6" required maxlength="1000" placeholder="Votre message"></textarea>
+          </p>
+
+          <p><button type="submit">Envoyer mon avis</button></p>
+          <p id="form-status" role="status"></p>
+        </fieldset>
+      </form>
+    </section>
+
+    <a id="back-to-top" href="#top">↑ Haut de page</a>
+  </main>
+</body>
+</html>

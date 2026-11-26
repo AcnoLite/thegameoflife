@@ -1,6 +1,6 @@
 /*
  * Interface du jeu : boutons, compteurs et clics sur le canvas.
- * Le moteur (règles et dessin) vient de gameoflife.js, voir crédits dans jeu.html.
+ * Le moteur (règles et dessin) vient de game-engine.js, voir crédits dans game.html.
  */
 
 (function () {
@@ -106,25 +106,30 @@
     creerPartie();
   }
 
-  // Avant de modifier une case, on récupère l'état affiché (qui a pu évoluer).
-  function synchroniserGrille() {
-    const cellules = jeu.getCurrentGenCells();
-    for (let y = 0; y < cellules.length; y++) {
-      for (let x = 0; x < cellules[y].length; x++) {
-        grille[y][x] = cellules[y][x].getState() === 'alive' ? 1 : 0;
-      }
-    }
-  }
+  const ctx = canvas.getContext('2d');
 
+  // Un clic bascule la cellule dans le moteur existant et redessine
+  // seulement cette case : pas besoin de recréer la partie.
   canvas.addEventListener('click', function (e) {
     const rect = canvas.getBoundingClientRect();
     const x = Math.floor((e.clientX - rect.left) * canvas.width / rect.width / TAILLE_CASE);
     const y = Math.floor((e.clientY - rect.top) * canvas.height / rect.height / TAILLE_CASE);
     if (x < 0 || x >= COLONNES || y < 0 || y >= LIGNES) return;
 
-    synchroniserGrille();
-    grille[y][x] = grille[y][x] === 1 ? 0 : 1;
-    creerPartie();
+    const cellule = jeu.getCurrentGenCells()[y][x];
+    const nouvelEtat = cellule.getState() === 'alive' ? 'dead' : 'alive';
+    cellule.setState(nouvelEtat);
+    grille[y][x] = nouvelEtat === 'alive' ? 1 : 0;
+
+    const px = x * TAILLE_CASE;
+    const py = y * TAILLE_CASE;
+    if (nouvelEtat === 'alive') {
+      ctx.fillStyle = '#000';
+      ctx.fillRect(px, py, TAILLE_CASE, TAILLE_CASE);
+    } else {
+      ctx.clearRect(px, py, TAILLE_CASE, TAILLE_CASE);
+    }
+    afficher();
   });
 
   boutonDemarrer.addEventListener('click', basculerLecture);

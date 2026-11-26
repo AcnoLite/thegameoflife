@@ -8,21 +8,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link id="theme-stylesheet" rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/top.js" defer></script>
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
   <nav aria-label="Navigation principale">
     <ul>
       <li><a href="index.html" aria-current="page">Histoire</a></li>
-      <li><a href="regles.html">Les règles</a></li>
-      <li><a href="jeu.html">Le jeu</a></li>
+      <li><a href="rules.html">Les règles</a></li>
+      <li><a href="game.html">Le jeu</a></li>
+      <li><a href="feedback.html">Avis</a></li>
+      <li><button id="theme-toggle" type="button" aria-pressed="false">Changer de style</button></li>
     </ul>
   </nav>
 
-  <main>
+  <main id="main">
     <header>
       <h1>Histoire</h1>
-      <p class="soustitre">Le jeu de la vie de Conway — d'après Wikipédia</p>
+      <p class="subtitle">Le jeu de la vie de Conway — d'après Wikipédia</p>
     </header>
 
     <section>
@@ -51,6 +58,8 @@
       </ol>
       <p>Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, d'après Wikipédia.</p>
     </footer>
+
+    <a id="back-to-top" href="#top">↑ Haut de page</a>
   </main>
 </body>
 </html>
