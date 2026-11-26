@@ -181,7 +181,7 @@ var GameDisplay = function(num_cells_x, num_cells_y, cell_width, cell_height, ca
       height_pixels = num_cells_y * cell_height,
       drawGridLines = function() {
         ctx.lineWidth = 1;
-        ctx.strokeStyle = "rgba(255, 0, 0, 1)";
+        ctx.strokeStyle = "rgba(0, 0, 0, 0.08)";
         ctx.beginPath();
         // foreach column
         for (var i = 0; i <= num_cells_x; i++) {
@@ -236,12 +236,12 @@ var GameDisplay = function(num_cells_x, num_cells_y, cell_width, cell_height, ca
         canvas.width = width_pixels;
         canvas.height = height_pixels;
 
-        // No grid lines, for now!
-        //drawGridLines();
+        drawGridLines();
       };
   init();
   return {
     update: function(cell_array) {
+      drawGridLines();
       updateCells(cell_array);
     }
   };

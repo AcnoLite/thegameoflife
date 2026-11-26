@@ -16,6 +16,7 @@
   const boutonPas = document.getElementById('next-step');
   const boutonHasard = document.getElementById('randomize');
   const boutonEffacer = document.getElementById('clear-game');
+  const boutonPlaneur = document.getElementById('pattern-glider');
   const champVitesse = document.getElementById('speed');
   const affichageGeneration = document.getElementById('generation');
   const affichageVivantes = document.getElementById('alive-count');
@@ -142,6 +143,20 @@
   });
   boutonHasard.addEventListener('click', gereHasard);
   boutonEffacer.addEventListener('click', gereEffacer);
+
+  function gerePlaneur() {
+    const cx = Math.floor(COLONNES / 2);
+    const cy = Math.floor(LIGNES / 2);
+    const motif = [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]];
+    grille = grilleVide();
+    for (const [dx, dy] of motif) {
+      grille[cy - 1 + dy][cx - 1 + dx] = 1;
+    }
+    generation = 0;
+    creerPartie();
+  }
+
+  boutonPlaneur.addEventListener('click', gerePlaneur);
   champVitesse.addEventListener('input', function () {
     if (enCours) lancerTimer();
   });
