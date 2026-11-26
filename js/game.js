@@ -1,3 +1,4 @@
+// Game page UI: wires the controls, counters and canvas clicks to the engine.
 /*
  * Interface du jeu : boutons, compteurs et clics sur le canvas.
  * Le moteur (règles et dessin) vient de game-engine.js, voir crédits dans game.html.
@@ -10,14 +11,14 @@
   const LIGNES = 30;
   const TAILLE_CASE = 12;
 
-  const canvas = document.getElementById('life');
-  const boutonDemarrer = document.getElementById('demarrer');
-  const boutonPas = document.getElementById('pas');
-  const boutonHasard = document.getElementById('hasard');
-  const boutonEffacer = document.getElementById('effacer');
-  const champVitesse = document.getElementById('vitesse');
+  const canvas = document.getElementById('game-canvas');
+  const boutonDemarrer = document.getElementById('start-game');
+  const boutonPas = document.getElementById('next-step');
+  const boutonHasard = document.getElementById('randomize');
+  const boutonEffacer = document.getElementById('clear-game');
+  const champVitesse = document.getElementById('speed');
   const affichageGeneration = document.getElementById('generation');
-  const affichageVivantes = document.getElementById('vivantes');
+  const affichageVivantes = document.getElementById('alive-count');
 
   let grille = [];
   let jeu = null;
@@ -37,7 +38,7 @@
   function creerPartie() {
     const copie = grille.map(function (ligne) { return ligne.slice(); });
     jeu = new GameOfLife({
-      canvas_id: 'life',
+      canvas_id: 'game-canvas',
       cell_width: TAILLE_CASE,
       cell_height: TAILLE_CASE,
       init_cells: copie

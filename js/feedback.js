@@ -7,8 +7,8 @@
 (function () {
   'use strict';
 
-  // À remplacer par la vraie adresse de réception des avis.
-  const DESTINATAIRE = 'avis@thegameoflife.fr';
+  // TODO: remplacer par l'adresse e-mail réelle de l'équipe (EMAIL_EQUIPE).
+  const EMAIL_EQUIPE = 'email-equipe@exemple.fr';
 
   const form = document.getElementById('feedback-form');
   const status = document.getElementById('form-status');
@@ -31,10 +31,10 @@
       message
     );
 
-    window.location.href = 'mailto:' + DESTINATAIRE + '?subject=' + sujet + '&body=' + corps;
+    window.location.href = 'mailto:' + EMAIL_EQUIPE + '?subject=' + sujet + '&body=' + corps;
 
     if (status) {
-      status.textContent = 'Votre client e-mail vient de s’ouvrir avec votre avis pré-rempli.';
+      status.textContent = "Votre messagerie va s'ouvrir.";
     }
   });
 })();
