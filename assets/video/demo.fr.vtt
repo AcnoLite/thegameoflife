@@ -1,31 +1,23 @@
 WEBVTT
 
-00:00.000 --> 00:04.000
-Bienvenue dans la démonstration du Jeu de la vie de Conway.
+00:00:00.000 --> 00:00:07.000
+Quatre cellules forment une structure stable.
 
-00:04.000 --> 00:08.000
-Chaque case noire est une cellule vivante, chaque case claire est morte.
+00:00:07.000 --> 00:00:14.000
+Oscillateur de période 2 : il bascule entre horizontal et vertical.
 
-00:08.000 --> 00:13.000
-Une cellule morte naît si elle a exactement trois voisines vivantes.
+00:00:14.000 --> 00:00:21.000
+Vaisseau qui avance en diagonale en quatre générations.
 
-00:13.000 --> 00:18.000
-Une cellule vivante survit avec deux ou trois voisines, sinon elle meurt.
+00:00:21.000 --> 00:00:28.000
+Oscillateur de période 3, très reconnaissable.
 
-00:18.000 --> 00:23.000
-Sur le site, cliquez sur le bouton Planeur pour poser un vaisseau au centre.
+00:00:28.000 --> 00:00:35.000
+Il émet un planeur toutes les trente générations.
 
-00:23.000 --> 00:28.000
-Puis appuyez sur Démarrer pour lancer la simulation automatiquement.
+00:00:35.000 --> 00:00:42.000
+Petite graine qui évolue très longtemps.
 
-00:28.000 --> 00:33.000
-Le bouton Pas à pas avance génération par génération, case par case.
+00:00:42.000 --> 00:00:49.000
+Une grande population de cellules évolue : le jeu prend vie.
 
-00:33.000 --> 00:38.000
-Le curseur de vitesse règle le nombre de générations par seconde.
-
-00:38.000 --> 00:42.000
-Vous pouvez aussi dessiner vos propres motifs en cliquant sur la grille.
-
-00:42.000 --> 00:45.000
-Merci d'avoir suivi cette démonstration du Jeu de la vie.
