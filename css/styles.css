@@ -170,7 +170,7 @@ footer li { margin-bottom: .5rem; }
 
 .game-scroll { overflow-x: auto; }
 
-#game-canvas {
+#life {
   display: block;
   border: 1px solid var(--border);
   background: #fff;
@@ -264,4 +264,36 @@ textarea { resize: vertical; }
 /* Tablets. */
 @media (min-width: 641px) and (max-width: 1024px) {
   main { max-width: 42rem; }
+}
+
+/* Dark theme, toggled by js/theme.js via data-theme on <html>. */
+html[data-theme="dark"] {
+  --text: #e6e6e6;
+  --muted: #a3a3a3;
+  --accent: #8ab8e0;
+  --background: #161616;
+  --border: #3a3a3a;
+}
+
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .skip-link:focus,
+html[data-theme="dark"] button,
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="email"],
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background: #1f1f1f;
+  color: var(--text);
+}
+
+html[data-theme="dark"] #life {
+  background: #1f1f1f;
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] code { background: #2c2c2c; }
+
+html[data-theme="dark"] .callout {
+  background: #1d2733;
+  border-color: var(--accent);
 }

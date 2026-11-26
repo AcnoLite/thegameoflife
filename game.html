@@ -38,17 +38,17 @@
       <h2>Plateau</h2>
 
       <div class="game-controls">
-        <button id="start-game" type="button">Démarrer</button>
-        <button id="next-step" type="button">Pas à pas</button>
-        <button id="randomize" type="button">Hasard</button>
-        <button id="clear-game" type="button">Effacer</button>
-        <label for="speed" class="game-help">Vitesse</label>
-        <input id="speed" type="range" min="1" max="20" value="8">
-        <span class="game-stats">Génération <strong id="generation" aria-live="polite">0</strong> · Vivantes <strong id="alive-count" aria-live="polite">0</strong></span>
+        <button id="demarrer" type="button">Démarrer</button>
+        <button id="pas" type="button">Pas à pas</button>
+        <button id="hasard" type="button">Hasard</button>
+        <button id="effacer" type="button">Effacer</button>
+        <label for="vitesse" class="game-help">Vitesse</label>
+        <input id="vitesse" type="range" min="1" max="20" value="8">
+        <span class="game-stats">Génération <strong id="generation" aria-live="polite">0</strong> · Vivantes <strong id="vivantes" aria-live="polite">0</strong></span>
       </div>
 
       <div class="game-scroll">
-        <canvas id="game-canvas" width="720" height="360" aria-label="Grille du jeu de la Vie" role="img"></canvas>
+        <canvas id="life" width="720" height="360" aria-label="Grille du jeu de la Vie" role="img"></canvas>
       </div>
 
       <p class="game-help">Règles : une case morte avec 3 voisines vivantes naît ; une case vivante survit avec 2 ou 3 voisines. Voir <a href="rules.html">la page Règles</a>.</p>
