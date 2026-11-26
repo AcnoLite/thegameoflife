@@ -34,7 +34,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Feuille de style minifiée (source commentée : css/styles.css) -->
+  <link rel="stylesheet" href="css/styles.min.css">
   <script src="js/game-engine.js" defer></script>
   <script src="js/game.js" defer></script>
   <script src="js/theme.js" defer></script>
@@ -43,6 +44,7 @@
 <body id="top">
   <a class="skip-link" href="#main">Aller au contenu</a>
 
+  <!-- Navigation principale -->
   <nav aria-label="Navigation principale">
     <ul>
       <li><a href="index.html">Histoire</a></li>
@@ -53,12 +55,14 @@
     </ul>
   </nav>
 
+  <!-- Contenu principal : plateau interactif et démonstration -->
   <main id="main">
     <header>
       <h1>Le jeu</h1>
       <p class="subtitle">Cliquez sur les cases pour dessiner, puis lancez la simulation</p>
     </header>
 
+    <!-- Plateau de jeu, contrôles et crédit du moteur -->
     <section>
       <h2>Plateau</h2>
 
@@ -81,6 +85,7 @@
 
       <p class="game-help">Moteur du jeu : <a href="https://github.com/nomatteus/conway-game-of-life-js">conway-game-of-life-js</a> de Matthew Ruten, sous licence MIT.</p>
 
+      <!-- Démonstration vidéo locale (MP4 + sous-titres WebVTT en français) -->
       <h2>Démonstration vidéo</h2>
       <video id="demo-video" controls preload="none" poster="assets/video/poster.webp">
         <source src="assets/video/demo.mp4" type="video/mp4">
@@ -89,6 +94,7 @@
       </video>
     </section>
 
+    <!-- Pied de page : coordonnées de l'IUT -->
     <p>Département informatique — IUT d'Aix-Marseille, 413 avenue Gaston Berger, 13625 Aix-en-Provence Cedex 1.</p>
 
     <a id="back-to-top" href="#top">↑ Haut de page</a>
