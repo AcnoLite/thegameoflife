@@ -1,18 +1,27 @@
-/* Toggles the stylesheet between the default and the alternative theme. */
+/* Toggles the alternative theme by adding/removing its stylesheet on top of the base one. */
 
 (function () {
   'use strict';
 
   const bouton = document.getElementById('theme-toggle');
-  const feuille = document.getElementById('theme-stylesheet');
-  if (!bouton || !feuille) return;
+  if (!bouton) return;
+
+  let feuilleAlt = null;
 
   bouton.addEventListener('click', function () {
-    const alt = feuille.getAttribute('href') === 'css/styles.css'
-      ? 'css/styles-alt.css'
-      : 'css/styles.css';
-    feuille.setAttribute('href', alt);
-    bouton.textContent = alt === 'css/styles-alt.css' ? 'Style clair' : 'Style sombre';
-    bouton.setAttribute('aria-pressed', alt === 'css/styles-alt.css' ? 'true' : 'false');
+    if (feuilleAlt) {
+      feuilleAlt.remove();
+      feuilleAlt = null;
+      bouton.textContent = 'Changer de style';
+      bouton.setAttribute('aria-pressed', 'false');
+    } else {
+      feuilleAlt = document.createElement('link');
+      feuilleAlt.id = 'theme-stylesheet';
+      feuilleAlt.rel = 'stylesheet';
+      feuilleAlt.href = 'css/styles-alt.css';
+      document.head.appendChild(feuilleAlt);
+      bouton.textContent = 'Style clair';
+      bouton.setAttribute('aria-pressed', 'true');
+    }
   });
 })();
